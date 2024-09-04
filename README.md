@@ -3,7 +3,7 @@
 2. To verify installation run this `mongod` in cmd
 3. Download MongoDB Shell `mongosh` from [Mongosh](https://www.mongodb.com/try/download/shell).
 4. Launch MongoDb-Compass and connect to MongoDB.
-- Note: You can use `chocolatey` package manager or download it from [MongoDb download](https://www.mongodb.com/try/download/community) from the official website.
+- Note: You can use `chocolatey` package manager or download it from the official website. [MongoDb download](https://www.mongodb.com/try/download/community) 
 
 # Introduction to Mongodb
 MongoDB is a popular open-source NoSQL database that uses a document-oriented data model.
@@ -77,5 +77,30 @@ location: "San Fransisco"
 ![image](https://github.com/user-attachments/assets/6ea04f29-e409-4954-89b0-36a620029f75)
 
 
+# CRUD Operations
 
+[Documentation](https://www.mongodb.com/docs/manual/)
+
+### Insert
+
+The MongoDB shell provides the following methods to insert documents into a collection:
+To insert a single document, use `db.collection.insertOne()`.
+To insert multiple documents, use `db.collection.insertMany()`.
+
+Examples:
+```mongosh
+db.inventory.insertOne(
+  {
+    title: "The Favourite",
+    type: "movie"
+  }
+)
+```
+Output
+
+![image](https://github.com/user-attachments/assets/b1819d7c-e7fd-46d4-8688-414ff4aaa331)
+
+### Read
+### Update
+### Delete
 
