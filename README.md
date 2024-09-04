@@ -54,9 +54,9 @@ Data added
 There is no need for schema here.
 "schema" refers to the structure of the data, including the fields and their data types. Unlike traditional relational databases like MySQL , which enforce a strict schema at the database level, MongoDB is schema-less or schema-flexible. 
 This means:
-No Fixed Schema: Collections do not enforce a fixed schema. Documents within the same collection can have different sets of fields, and the data types for the same field can vary across documents.
-Dynamic Schema: You can add or remove fields from documents without having to update a central schema definition. This allows for more flexibility and faster iteration during development.
-Nested Data Structures: MongoDB supports nested documents and arrays, allowing for more complex data representations within a single document.
+- No Fixed Schema: Collections do not enforce a fixed schema. Documents within the same collection can have different sets of fields, and the data types for the same field can vary across documents.
+- Dynamic Schema: You can add or remove fields from documents without having to update a central schema definition. This allows for more flexibility and faster iteration during development.
+- Nested Data Structures: MongoDB supports nested documents and arrays, allowing for more complex data representations within a single document.
 
 ```mongosh
 _id: ObjectId('66d6c04165421871b216b8cf')
