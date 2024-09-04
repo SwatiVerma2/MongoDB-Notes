@@ -1,5 +1,4 @@
-# MongoDB Notes
-# Installation
+# MongoDB Installation
 1. Use `choco install mongodb`
 2. To verify installation run this `mongod` in cmd
 3. Download MongoDB Shell `mongosh` from [Mongosh](https://www.mongodb.com/try/download/shell).
@@ -59,7 +58,7 @@ No Fixed Schema: Collections do not enforce a fixed schema. Documents within the
 Dynamic Schema: You can add or remove fields from documents without having to update a central schema definition. This allows for more flexibility and faster iteration during development.
 Nested Data Structures: MongoDB supports nested documents and arrays, allowing for more complex data representations within a single document.
 
-```javascript
+```mongosh
 _id: ObjectId('66d6c04165421871b216b8cf')
 name : "Swati"
 role : "Devops"
