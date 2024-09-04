@@ -278,13 +278,11 @@ Updated Data
 
 ![image](https://github.com/user-attachments/assets/2a4e9342-a46f-41f3-b536-1154f570f51c)
 
-
-
 Use : It is used in Pagination 
 Pagination  is a technique used in database queries (and in web applications generally) to divide a large dataset into smaller, more manageable chunks or "pages." This allows users to retrieve and view a portion of the data at a time rather than loading the entire dataset in a single query.
 - Achieving pagination using Mongodb find and limit
 
-- ![image](https://github.com/user-attachments/assets/7b38ab04-9c96-4345-bb04-aec2dd868248)
+![image](https://github.com/user-attachments/assets/7b38ab04-9c96-4345-bb04-aec2dd868248)
 
 2. Skip : skips the specified number of documents
 `db.people.find().skip(1)`
