@@ -11,12 +11,12 @@ Unlike traditional relational databases that store data in tables with rows and 
 This allows for more dynamic and scalable data storage, making it well-suited for applications with evolving data requirements.
 
 ### Key Features
-Document-Oriented Storage: Data is stored in BSON (Binary JSON) format, which allows for nested data structures.
-Schema Flexibility: Documents in a collection do not need to have the same set of fields, and data types for the same field can differ across documents.
-Scalability: Supports horizontal scaling through sharding, which distributes data across multiple servers.
-Indexing: Supports various types of indexes to improve query performance.
-Aggregation Framework: Provides powerful tools for data aggregation and transformation.
-Replication: Supports replica sets for high availability and data redundancy.
+- Document-Oriented Storage: Data is stored in BSON (Binary JSON) format, which allows for nested data structures.
+- Schema Flexibility: Documents in a collection do not need to have the same set of fields, and data types for the same field can differ across documents.
+- Scalability: Supports horizontal scaling through sharding, which distributes data across multiple servers.
+- Indexing: Supports various types of indexes to improve query performance.
+- Aggregation Framework: Provides powerful tools for data aggregation and transformation.
+- Replication: Supports replica sets for high availability and data redundancy.
 
 ### Core concepts
 1. Database: It is a container for collections, similar to how a database in a relational system contains tables. Each database has its own set of collections and is stored on disk as separate files. You can have multiple databases on a MongoDB server, each serving a different application or purpose.
@@ -177,7 +177,53 @@ db.people.find({
   ]
 })
 ```
+Output
 
+![image](https://github.com/user-attachments/assets/ea131f26-d7ee-4473-aea3-63f02d2f845a)
+
+Using $gt
+```mongosh
+db.people.find({
+     occupation: "Engineer" ,
+     age: {$gt: 23} 
+})
+```
+![image](https://github.com/user-attachments/assets/73fab12c-ac81-42a6-9ecb-0ffc53a0278f)
+
+OR
+```mongosh
+db.people.find({
+  $or: [
+    { occupation: "Engineer" },
+    { city: "San Francisco" }
+  ]
+})
+```
+Output
+
+![image](https://github.com/user-attachments/assets/c0a6f3db-4d09-4e3f-85ad-3f08c99857dc)
+
+Eg 2 
+```mongosh
+db.people.find({
+   $or: [ {occupation: "Engineer" } ,{age: {$gt: 23}} ]
+})
+```
+Output
+![image](https://github.com/user-attachments/assets/2fd51838-16df-4972-baad-49c3725fbe04)
+
+
+The findOne method in MongoDB is used to retrieve a single document from a collection that matches a specified query. Unlike the find method, which returns a cursor pointing to all matching documents, findOne directly returns the first matching document it finds.
+Syntax : `db.collection.findOne(query, projection)`
+
+```mongosh
+db.people.findOne({
+   $or: [ {occupation: "Engineer" } ,{age: {$gt: 23}} ]
+})
+```
+Output
+
+![image](https://github.com/user-attachments/assets/832da74e-7139-4f99-872c-9c0e5623214d)
 
 ### Update
 1. `updateOne()`
@@ -213,6 +259,7 @@ Updated Data
 ![image](https://github.com/user-attachments/assets/38b31eab-8579-483f-8140-dd3aa5dd31db)
 
 ### Delete
+
 1.deleteMany()
 `db.Programmers.deleteMany({})`
 
@@ -224,6 +271,39 @@ Updated Data
  ![image](https://github.com/user-attachments/assets/47e9ef99-f1db-4458-8315-c18705eb2b0f)
 
 # Sort and Limit Data
+
+1. limit
+`db.people.find().limit(2)`
+
+![image](https://github.com/user-attachments/assets/2a4e9342-a46f-41f3-b536-1154f570f51c)
+
+
+
+Use : It is used in Pagination 
+Pagination  is a technique used in database queries (and in web applications generally) to divide a large dataset into smaller, more manageable chunks or "pages." This allows users to retrieve and view a portion of the data at a time rather than loading the entire dataset in a single query.
+- Achieving pagination using Mongodb find and limit
+
+- ![image](https://github.com/user-attachments/assets/7b38ab04-9c96-4345-bb04-aec2dd868248)
+
+2. Skip : skips the specified number of documents
+`db.people.find().skip(1)`
+
+![image](https://github.com/user-attachments/assets/a3ad9f70-4d16-42ef-90e1-a145f0d60446)
+
+3.sort
+`db.people.find().sort({age:1})`
+1 → ascending order
+
+![image](https://github.com/user-attachments/assets/1d2dab9a-2968-4797-b1b0-a80cf4f15ff3)
+
+
+`db.people.find().sort({age: -1})`
+-1 → descending order
+
+![image](https://github.com/user-attachments/assets/d41ffcba-82bd-4adc-8881-94915d2c98ee)
+
+
+
 
 # Operators
 [Documentation](https://www.mongodb.com/docs/manual/reference/operator/)
@@ -297,4 +377,17 @@ db.orders.aggregate( [
 #### Output
 
 ![image](https://github.com/user-attachments/assets/43fa8d7b-ffa4-434c-8f1b-122c132d107a)
+
+# Mongodb - Atlas 
+MongoDB Atlas is a cloud-based, fully-managed database service provided by MongoDB. It offers a way to deploy, manage, and scale MongoDB databases without having to handle the operational aspects such as provisioning, patching, and backups. 
+
+Key features of MongoDB Atlas:
+
+- Managed Service: MongoDB Atlas handles the operational aspects of running MongoDB databases, including automated backups, monitoring, and security.
+- Scalability: It provides auto-scaling capabilities, allowing you to adjust resources based on your application's needs. You can scale vertically by increasing instance size or horizontally by adding more nodes.
+- Global Deployment: Atlas allows you to deploy databases across multiple cloud providers (AWS, Azure, and Google Cloud) and regions, which can improve performance and redundancy.
+- Security: It includes built-in security features like encryption at rest and in transit, fine-grained access controls, and network isolation.
+- Monitoring and Analytics: Provides real-time monitoring, alerts, and performance analytics, helping you keep track of database health and performance.
+- Easy Integration: Atlas integrates with various tools and services, including MongoDB’s own tools, third-party monitoring solutions, and application frameworks.
+- Automated Updates: Atlas manages updates and patches to ensure you are always running the latest, stable version of MongoDB.
 
