@@ -210,6 +210,7 @@ db.people.find({
 })
 ```
 Output
+
 ![image](https://github.com/user-attachments/assets/2fd51838-16df-4972-baad-49c3725fbe04)
 
 
