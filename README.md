@@ -113,7 +113,7 @@ This operation is equivalent to the following SQL statement `SELECT * FROM movie
 
 
 #### Specify Equality Condition
-To select documents which match an equality condition, specify the condition as a <field>:<value> pair in the query filter document.
+To select documents which match an equality condition, specify the condition as a `<field>:<value>` pair in the query filter document.
 
 `db.inventory.find({type: “web series”})`
 
