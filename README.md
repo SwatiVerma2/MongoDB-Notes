@@ -1,3 +1,11 @@
+# MongoDB Notes
+# Installation
+1. choco install mongodb
+2. mongod to verify installation
+3. To start the MongoDB server : net start MongoDB
+4. Connect to MongoDBOpen another Command Prompt.Type mongo and press Enter. This will start the MongoDB shell and connect to the MongoDB server.
+Note: You can use `chocolatey` package manager or download it from [MongoDb download](https://www.mongodb.com/try/download/community) from the official website.
+
 # Introduction to Mongodb
 MongoDB is a popular open-source NoSQL database that uses a document-oriented data model.
 Unlike traditional relational databases that store data in tables with rows and columns, MongoDB stores data in flexible, JSON-like documents. 
@@ -60,6 +68,14 @@ _id: ObjectId('66d6c10365421871b216b8d0')
 name : "Niall"
 location: "San Fransisco"
 ```
+### Basic Commands
+`show dbs`
+
+![image](https://github.com/user-attachments/assets/20f23f2f-c97e-4be0-ab9a-4361be1444dd)
+
+`use <database-name>`
+
+![image](https://github.com/user-attachments/assets/6ea04f29-e409-4954-89b0-36a620029f75)
 
 
 
