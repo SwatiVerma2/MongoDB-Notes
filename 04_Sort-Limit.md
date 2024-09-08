@@ -18,12 +18,14 @@ Pagination  is a technique used in database queries (and in web applications gen
 
 3.sort
 `db.people.find().sort({age:1})`
+
 1 → ascending order
 
 ![image](https://github.com/user-attachments/assets/1d2dab9a-2968-4797-b1b0-a80cf4f15ff3)
 
 
 `db.people.find().sort({age: -1})`
+
 -1 → descending order
 
 ![image](https://github.com/user-attachments/assets/d41ffcba-82bd-4adc-8881-94915d2c98ee)
