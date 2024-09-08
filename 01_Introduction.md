@@ -37,13 +37,13 @@ This allows for more dynamic and scalable data storage, making it well-suited fo
 
 ## Advantages of using MongoDB:
 
-- 1. **Flexible Schema**: MongoDB uses a flexible schema model where documents in a collection can have different structures. This allows for easy adjustments to data models as requirements evolve.
-- 2. **Scalability**: MongoDB supports horizontal scaling through sharding, which distributes data across multiple servers. This makes it easier to handle large volumes of data and high traffic loads.
-- 3. **Performance**: MongoDB’s in-memory processing and indexing mechanisms allow for fast data retrieval and efficient querying.
-- 4. **Document-Oriented**: Data is stored in a JSON-like format (BSON), making it easy to represent complex data structures and nested relationships directly within documents.
-- 5. **High Availability**: MongoDB provides built-in replication and failover mechanisms through replica sets. This ensures high availability and data redundancy.
-- 6. **Rich Query Language**: MongoDB supports a powerful query language that allows for complex queries, aggregations, and indexing.
-- 7. **Easy Integration**: MongoDB integrates well with various programming languages and frameworks, making it easy to use in diverse tech stacks.
-- 8. **Real-Time Data Processing**: MongoDB’s ability to handle real-time data feeds and its support for various data formats make it suitable for real-time analytics and applications.
-- 9. **Built-In Tools**: MongoDB offers tools like MongoDB Atlas for cloud deployments, MongoDB Compass for GUI-based interactions, and a wide range of connectors for data integration.
-- 10. **Community and Ecosystem**: MongoDB has a large community and extensive ecosystem of libraries, tools, and support resources, making it easier to find help and resources.
+1. **Flexible Schema**: MongoDB uses a flexible schema model where documents in a collection can have different structures. This allows for easy adjustments to data models as requirements evolve.
+2. **Scalability**: MongoDB supports horizontal scaling through sharding, which distributes data across multiple servers. This makes it easier to handle large volumes of data and high traffic loads.
+3. **Performance**: MongoDB’s in-memory processing and indexing mechanisms allow for fast data retrieval and efficient querying.
+4. **Document-Oriented**: Data is stored in a JSON-like format (BSON), making it easy to represent complex data structures and nested relationships directly within documents.
+5. **High Availability**: MongoDB provides built-in replication and failover mechanisms through replica sets. This ensures high availability and data redundancy.
+6. **Rich Query Language**: MongoDB supports a powerful query language that allows for complex queries, aggregations, and indexing.
+7. **Easy Integration**: MongoDB integrates well with various programming languages and frameworks, making it easy to use in diverse tech stacks.
+8. **Real-Time Data Processing**: MongoDB’s ability to handle real-time data feeds and its support for various data formats make it suitable for real-time analytics and applications.
+9. **Built-In Tools**: MongoDB offers tools like MongoDB Atlas for cloud deployments, MongoDB Compass for GUI-based interactions, and a wide range of connectors for data integration.
+10. **Community and Ecosystem**: MongoDB has a large community and extensive ecosystem of libraries, tools, and support resources, making it easier to find help and resources.
