@@ -1,39 +1,4 @@
-# MongoDB Installation
-1. Use `choco install mongodb`
-2. To verify installation run this `mongod` in cmd
-3. Download MongoDB Shell `mongosh` from [Mongosh](https://www.mongodb.com/try/download/shell).
-4. Launch MongoDb-Compass and connect to MongoDB.
-- Note: You can use `chocolatey` package manager or download it from the official website. [MongoDb download](https://www.mongodb.com/try/download/community) 
 
-# Introduction to Mongodb
-MongoDB is a popular open-source NoSQL database that uses a document-oriented data model.
-Unlike traditional relational databases that store data in tables with rows and columns, MongoDB stores data in flexible, JSON-like documents. 
-This allows for more dynamic and scalable data storage, making it well-suited for applications with evolving data requirements.
-
-### Key Features
-- Document-Oriented Storage: Data is stored in BSON (Binary JSON) format, which allows for nested data structures.
-- Schema Flexibility: Documents in a collection do not need to have the same set of fields, and data types for the same field can differ across documents.
-- Scalability: Supports horizontal scaling through sharding, which distributes data across multiple servers.
-- Indexing: Supports various types of indexes to improve query performance.
-- Aggregation Framework: Provides powerful tools for data aggregation and transformation.
-- Replication: Supports replica sets for high availability and data redundancy.
-
-### Core concepts
-1. Database: It is a container for collections, similar to how a database in a relational system contains tables. Each database has its own set of collections and is stored on disk as separate files. You can have multiple databases on a MongoDB server, each serving a different application or purpose.
-
-2. Collection: A collection is a grouping of MongoDB documents, similar to a table in a relational database. However, unlike tables, collections do not enforce a schema, meaning the documents within a collection can have different structures. Collections are created dynamically when a document is inserted into them.
-
-3. Document: A document is the basic unit of data in MongoDB, similar to a row in a relational database but more flexible. Documents are stored in BSON (Binary JSON) format, which allows them to hold complex data structures, including nested arrays and objects. Each document is a collection of key-value pairs, where the keys are strings, and the values can be various data types (e.g., string, number, array, object).
-
-4. Fields: Fields are the key-value pairs within a document, similar to columns in a relational database table. Each field contains a specific piece of data. Unlike relational databases, fields in MongoDB documents are flexible, meaning different documents in the same collection can have different fields.
-
-![image](https://github.com/user-attachments/assets/47fb5fb0-e27e-49d8-a84c-917cfdf871d4)
-
-![image](https://github.com/user-attachments/assets/76b0f9c8-f8a1-426e-aa94-125e17c1bd2b)
-
-![image](https://github.com/user-attachments/assets/89c245fd-65ae-4513-9f2f-9faba2616814)
-
-![image](https://github.com/user-attachments/assets/6c939bab-39c7-40b2-afcf-878305730e65)
 
 
 # CRUD Operations
@@ -244,66 +209,7 @@ Updated Data
 ![image](https://github.com/user-attachments/assets/fdbe3dcc-f7df-4d0a-a512-3e17c84e5cd8)
 
 
-# Aggregation Pipeline
-An aggregation pipeline consists of one or more stages that process documents:
-Each stage performs an operation on the input documents. For example, a stage can filter documents, group documents, and calculate values.
-The documents that are output from a stage are passed to the next stage.
-An aggregation pipeline can return results for groups of documents. For example, return the total, average, maximum, and minimum values.
-You can update documents with an aggregation pipeline if you use the stages shown in Updates with Aggregation Pipeline.
 
-[Documentation](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/)
-
-#### Data used
-```mongosh
-db.orders.insertMany( [
-   { _id: 0, name: "Pepperoni", size: "small", price: 19,
-     quantity: 10, date: ISODate( "2021-03-13T08:14:30Z" ) },
-   { _id: 1, name: "Pepperoni", size: "medium", price: 20,
-     quantity: 20, date : ISODate( "2021-03-13T09:13:24Z" ) },
-   { _id: 2, name: "Pepperoni", size: "large", price: 21,
-     quantity: 30, date : ISODate( "2021-03-17T09:22:12Z" ) },
-   { _id: 3, name: "Cheese", size: "small", price: 12,
-     quantity: 15, date : ISODate( "2021-03-13T11:21:39.736Z" ) },
-   { _id: 4, name: "Cheese", size: "medium", price: 13,
-     quantity:50, date : ISODate( "2022-01-12T21:23:13.331Z" ) },
-   { _id: 5, name: "Cheese", size: "large", price: 14,
-     quantity: 10, date : ISODate( "2022-01-12T05:08:13Z" ) },
-   { _id: 6, name: "Vegan", size: "small", price: 17,
-     quantity: 10, date : ISODate( "2021-01-13T05:08:13Z" ) },
-   { _id: 7, name: "Vegan", size: "medium", price: 18,
-     quantity: 10, date : ISODate( "2021-01-13T05:10:13Z" ) }
-] )
-```
-#### Query
-
-Calculate Total Order Quantity
-The following aggregation pipeline example contains two stages and returns the total order quantity of medium size pizzas grouped by pizza name:
-```mongosh
-db.orders.aggregate( [
-
-   // Stage 1: Filter pizza order documents by pizza size
-   {
-      $match: { size: "medium" }
-   },
-
-   // Stage 2: Group remaining documents by pizza name and calculate total quantity
-   {
-      $group: { _id: "$name", totalQuantity: { $sum: "$quantity" } }
-   }
-
-] )
-```
-
-- The $match stage:
-  Filters the pizza order documents to pizzas with a size of medium.
-  Passes the remaining documents to the $group stage.
-- The $group stage:
-  Groups the remaining documents by pizza name.
-  Uses $sum to calculate the total order quantity for each pizza name. The total is stored in the totalQuantity field returned by the aggregation pipeline.
-
-#### Output
-
-![image](https://github.com/user-attachments/assets/43fa8d7b-ffa4-434c-8f1b-122c132d107a)
 
 # Mongodb - Atlas 
 MongoDB Atlas is a cloud-based, fully-managed database service provided by MongoDB. It offers a way to deploy, manage, and scale MongoDB databases without having to handle the operational aspects such as provisioning, patching, and backups. 
