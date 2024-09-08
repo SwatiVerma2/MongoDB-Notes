@@ -1,5 +1,5 @@
 # Sort and Limit Data
-
+ 
 1. limit
 `db.people.find().limit(2)`
 
